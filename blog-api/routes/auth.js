@@ -10,7 +10,11 @@ router.use(authorizeKey);
 
 // GET logout
 router.get('/logout', (req, res) => {
-    res.json('logout');
+    global.user = null;
+    res.json({
+        success : true,
+        message : 'User logged out successfully'
+    });
 });
 
 // POST login
