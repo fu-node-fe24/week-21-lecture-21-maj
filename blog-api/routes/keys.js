@@ -4,7 +4,7 @@ import { getRandomKey } from '../services/keys.js';
 const router = Router();
 
 // GET key
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     const key = await getRandomKey();
     if(key) {
         res.json({
@@ -12,8 +12,8 @@ router.get('/', async (req, res) => {
             key : key.key
         });
     } else {
-        res.status(404).json({
-            success : false,
+        next({
+            status : 404,
             message : 'No key found'
         });
     }

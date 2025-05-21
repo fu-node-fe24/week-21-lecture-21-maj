@@ -5,6 +5,8 @@ import mongoose from 'mongoose';
 import keysRouter from './routes/keys.js';
 import authRouter from './routes/auth.js';
 import postsRouter from './routes/posts.js';
+import logger from './middlewares/logger.js';
+import errorHandler from './middlewares/errorHandler.js';
 
 
 // Config
@@ -16,6 +18,7 @@ const database = mongoose.connection;
 
 // Middlewares
 app.use(express.json());
+app.use(logger);
 
 // Routes
 app.use('/api/keys', keysRouter);
@@ -31,3 +34,6 @@ database.once('connected', () => {
         console.log(`Server is running on port ${PORT}`);
     });
 });
+
+// ErrorHandling
+app.use(errorHandler);

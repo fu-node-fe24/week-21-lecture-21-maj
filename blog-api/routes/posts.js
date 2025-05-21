@@ -1,11 +1,15 @@
 import { Router } from 'express';
 import { v4 as uuid } from 'uuid';
+import { authorizeKey } from '../middlewares/authorize.js';
 
 const router = Router();
 
+// Middlewares
+router.use(authorizeKey);
+
 // GET all posts
 router.get('/', async (req, res) => {
-
+    res.json('Posts!');
 });
 
 // GET all posts by userID

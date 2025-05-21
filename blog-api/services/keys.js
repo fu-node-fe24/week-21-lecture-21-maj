@@ -16,7 +16,9 @@ export async function getRandomKey() {
 
 export async function isKeyInDatabase(key) {
     try {
-
+        const keyExists = await Key.exists({ key : key});
+        if(keyExists) return true;
+        else throw new Error('Invalid key');
     } catch(error) {
         console.log(error.message);
         return false;
