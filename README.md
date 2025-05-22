@@ -17,7 +17,7 @@ Klicka på *Network Access* i menyn till vänster, följt utav knappen *ADD IP A
 Var och en i gruppen tilldelas clustrets Connection String för Compass, där man fyller på med sina egna användaruppgifter och försöker connecta. Kontrollera så att ni alla kan se databasen *BlogAPI* och collection *keys*. Varje person i gruppen lägger därefter till en API-nyckel i collection *keys* enligt formatet "blog-XXXXX".
 
 **Steg 5:**
-Var och en i gruppen clonar hem detta repo, öppnar mappen blog-api i VSCode där man skapar en *.env*-fil. I denna fil lägger man in nycklarna *PORT* och *CONNECTION_STRING*. Fyll i valfri port, och klistra in den collection string som databasansvarige nu hämtar på MongoDB. Tänk på att fylla i era tilldelade användaruppgifter, samt lägga till databasens namn som endpoint i url:en.
+Var och en i gruppen clonar hem detta repo, öppnar mappen blog-api i VSCode där man skapar en *.env*-fil. I denna fil lägger man in nycklarna *PORT* och *CONNECTION_STRING*. Fyll i valfri port, och klistra in den collection string som databasansvarige nu hämtar på MongoDB för *Drivers*. Tänk på att fylla i era tilldelade användaruppgifter, samt lägga till databasens namn som endpoint i url:en.
 
 **Steg 6:**
 Starta igång er utvecklingsserver och använd insomnia för att registrera en varsin användare, logga in, och försök därefter posta ett par blogginlägg vardera. Kontrollera att era collections fylls på med data i Compass.
